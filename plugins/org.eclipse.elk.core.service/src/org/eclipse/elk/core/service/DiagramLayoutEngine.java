@@ -97,6 +97,7 @@ public class DiagramLayoutEngine {
                                 || targets.contains(LayoutOptionData.Target.PARENTS);
                     }
                 }
+                // cds: Use proper else if
                 if (e instanceof KEdge) {
                     return targets.contains(LayoutOptionData.Target.EDGES);
                 }
@@ -134,6 +135,21 @@ public class DiagramLayoutEngine {
      *         .setProperty(LayoutOptions.ANIMATE, true);
      * DiagramLayoutEngine.INSTANCE.layout(workbenchPart, diagramPart, setup);
      * </pre>
+     * cds: Something like this seems very sensible and looks like it will make layout configuration
+     *      a lot easier. However, the code itself is not very self-explaining, which I think is due
+     *      to two things: the method names are a bit misleading, I think; and second, the method
+     *      chaining approach works very well if only a single element is to be configured, but it would
+     *      be very cool if we could write something like this:
+     *          setup.addLayoutRun()
+     *              .configure(KNode.class)
+     *                  .setProperty(...)
+     *                  .setProperty(...)
+     *              .configure(KEdge.class)
+     *                  .setProperty(...)
+     *                  .setProperty(...);
+     *      Granted, this would make LayoutConfigurator a bit more complex since it would need to
+     *      maintain the currently configured element and perhaps duplicate some of the property holder
+     *      methods, but it may be worth it in terms of gained usability.
      * If multiple configurators are given, the layout is computed multiple times:
      * once for each configurator. This behavior can be used to apply different layout algorithms
      * one after another, e.g. first a node placer algorithm and then an edge router algorithm.
@@ -200,6 +216,8 @@ public class DiagramLayoutEngine {
     
     /** the graph layout engine for executing layout algorithms on the hierarchy levels of a graph. */
     private final IGraphLayoutEngine graphLayoutEngine = new RecursiveGraphLayoutEngine(
+        // cds: KLay Layered already uses lambdas, so we may as well use them here, too. In general, I
+        //      would favour Java API over Guava.
         new Function<String, ILayoutAlgorithmData>() {
             public ILayoutAlgorithmData apply(final String input) {
                 return configManager.getAlgorithm(input);

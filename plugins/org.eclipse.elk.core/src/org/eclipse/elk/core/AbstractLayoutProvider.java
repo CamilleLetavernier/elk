@@ -21,6 +21,10 @@ package org.eclipse.elk.core;
  * @author ars
  * @author msp
  */
+// cds: Update the documentation.
+// cds: Also, I understand why layout providers are also layout engines now. However, this should be
+//      somehow documented since the documentation of IGraphLayoutEngine is hardly applicable to
+//      the raw layout algorithm.
 public abstract class AbstractLayoutProvider implements IGraphLayoutEngine {
 
     /**

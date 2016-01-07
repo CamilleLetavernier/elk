@@ -34,6 +34,10 @@ import org.eclipse.elk.graph.KNode;
 public final class ForceLayoutProvider extends AbstractLayoutProvider {
 
     /** the layout provider id. */
+    // cds: You removed ".algorithm" from the ID, which I'm actually not too thrilled about. I'm
+    //      even thinking about adding ".algorithm" to the plugin names as well to keep everything
+    //      neatly separated. However, this constant here needs to be kept in sync. Same for other
+    //      algorithms.
     public static final String ID = "org.eclipse.elk.algorithm.force";
     
     /** the force model used by this layout algorithm. */

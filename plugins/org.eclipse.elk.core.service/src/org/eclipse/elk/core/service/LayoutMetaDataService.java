@@ -40,6 +40,7 @@ import com.google.common.collect.Maps;
  * meta data for automatic layout through KIML, which is given through the {@code layoutProviders}
  * extension point.
  * The meta data are provided by a subclass through the nested registry instance.
+ * cds: I'm not sure I understand why Registry is an abstract class.
  * 
  * @kieler.design 2011-03-14 reviewed by cmot, cds
  * @kieler.rating yellow 2012-10-09 review KI-25 by chsch, bdu

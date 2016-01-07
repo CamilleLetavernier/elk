@@ -40,6 +40,7 @@ public class LayoutMapping<T> extends MapPropertyHolder {
     /** the workbench part for wich the mapping was created, if any. */
     private final IWorkbenchPart workbenchPart;
     
+    // cds: Document that the workbench part may be null.
     public LayoutMapping(final IWorkbenchPart theWorkbenchPart) {
         this.workbenchPart = theWorkbenchPart;
     }

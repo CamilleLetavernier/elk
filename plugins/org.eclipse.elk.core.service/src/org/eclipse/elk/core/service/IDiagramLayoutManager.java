@@ -67,6 +67,8 @@ public interface IDiagramLayoutManager<T> {
      */
     void applyLayout(LayoutMapping<T> mapping, IPropertyHolder settings);
     
+    // cds: The undoLayout method that was here once is now the responsibility of the client?
+    
     /**
      * Return a layout configuration store that is able to read and write layout options
      * through annotations of the diagram. This configurator is necessary for the Layout View.

@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.elk.core.util;
 
+// cds: Class/Interface documentation.
 public interface IElkCancelIndicator {
 
     /**

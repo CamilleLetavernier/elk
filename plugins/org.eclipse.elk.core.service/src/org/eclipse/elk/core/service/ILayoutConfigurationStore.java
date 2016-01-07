@@ -41,6 +41,8 @@ public interface ILayoutConfigurationStore {
     
     /**
      * Set a new value for a layout option in the associated context.
+     * cds: What is the associated context? I don't see a context anywhere. Does every model element
+     *      whose properties can be modified get its own configuration store?
      * 
      * @param optionId a layout option identifier
      * @param value the new layout option value, or {@code null} if the current value shall be removed

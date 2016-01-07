@@ -182,10 +182,15 @@ public class RecursiveGraphLayoutEngine implements IGraphLayoutEngine {
      */
     private ILayoutAlgorithmData getAlgorithm(final KNode layoutNode) {
         KShapeLayout nodeLayout = layoutNode.getData(KShapeLayout.class);
+        // cds: Rename layoutHint to algorithmId
         String layoutHint = nodeLayout.getProperty(LayoutOptions.ALGORITHM);
         ILayoutAlgorithmData result = algorithmResolver.apply(layoutHint);
         if (result == null) {
             if (layoutHint == null || layoutHint.isEmpty()) {
+                // cds: It's not that the registry is empty, the layout algorithm is simply not set.
+                //      This check should probably be before we call the algorithm resolver. Also, why
+                //      not use the default layout algorithm specified in DEFAULT_LAYOUT_ALGORITHM in
+                //      this case?
                 throw new UnsupportedConfigurationException("The layout algorithm registry is empty.");
             } else {
                 throw new UnsupportedConfigurationException("Layout algorithm not found: " + layoutHint);

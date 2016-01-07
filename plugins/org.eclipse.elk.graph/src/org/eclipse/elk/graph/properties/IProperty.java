@@ -37,6 +37,8 @@ public interface IProperty<T> {
      * @return the lower bound
      */
     @Deprecated
+    // cds: Why are these deprecated? Don't we still want the ability to check whether layout option
+    //      values are within a valid range?
     Comparable<? super T> getLowerBound();
     
     /**

@@ -28,6 +28,9 @@ import com.google.common.collect.Iterators;
 
 /**
  * Manages layout configurations derived from implementations of {@link ILayoutConfigurationStore}.
+ * cds: Add more info. Are clients supposed to use this or is it automatically invoked by Elk? Also,
+ *      document how this fits into the picture between ILayoutConfigurationStore, Setup, and
+ *      LayoutConfigurator.
  */
 public class LayoutConfigurationManager {
     
@@ -41,6 +44,7 @@ public class LayoutConfigurationManager {
      * Return a layout algorithm data instance for the given layout hint. The hint can be attached
      * to some graph element in order to select an algorithm. If no hint is given, a default
      * algorithm is selected.
+     * cds: Isn't the layout hint actually a concrete algorithm ID?
      * 
      * @return a layout algorithm, or {@code null} if none was found for the given hint
      */

@@ -32,6 +32,8 @@ import com.google.common.collect.Maps;
  * used to modify the layout configuration of a graph after it has been created, e.g. in order to
  * apply multiple layouts with different configurations.
  */
+// cds: Mention how this class is intended to be used. Do people want to subclass it or create instances
+//      configured through the various methods?
 public class LayoutConfigurator implements IGraphElementVisitor {
     
     /**

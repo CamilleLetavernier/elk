@@ -13,6 +13,7 @@ package org.eclipse.elk.core;
 import org.eclipse.elk.core.options.GraphFeature;
 import org.eclipse.elk.core.util.InstancePool;
 
+// cds: Comments missing.
 public interface ILayoutAlgorithmData {
     
     InstancePool<AbstractLayoutProvider> getInstancePool();

@@ -62,6 +62,7 @@ public class GraphitiLayoutConfigurationStore implements ILayoutConfigurationSto
     /**
      * {@inheritDoc}
      */
+    // cds: This method is not inherited, is it?
     public Object getContext() {
         return pictogramElement;
     }
