@@ -68,6 +68,7 @@ public interface IDiagramLayoutManager<T> {
     void applyLayout(LayoutMapping<T> mapping, IPropertyHolder settings);
     
     // cds: The undoLayout method that was here once is now the responsibility of the client?
+    // msp: Yes, but it's not called anywhere from the ELK UI, anyway. That method was introduced because of KiVi.
     
     /**
      * Return a layout configuration store that is able to read and write layout options

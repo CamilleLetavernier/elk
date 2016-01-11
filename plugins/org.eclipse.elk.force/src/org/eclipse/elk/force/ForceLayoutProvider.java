@@ -38,6 +38,8 @@ public final class ForceLayoutProvider extends AbstractLayoutProvider {
     //      even thinking about adding ".algorithm" to the plugin names as well to keep everything
     //      neatly separated. However, this constant here needs to be kept in sync. Same for other
     //      algorithms.
+    // msp: I forgot to update the constants. I'm ok with renaming all the algorithm plugins. In any
+    //      case it makes sense to make the algorithm id equal to the plugin id.
     public static final String ID = "org.eclipse.elk.algorithm.force";
     
     /** the force model used by this layout algorithm. */

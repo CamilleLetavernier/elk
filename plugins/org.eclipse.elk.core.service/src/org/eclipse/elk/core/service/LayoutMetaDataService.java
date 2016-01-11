@@ -41,6 +41,9 @@ import com.google.common.collect.Maps;
  * extension point.
  * The meta data are provided by a subclass through the nested registry instance.
  * cds: I'm not sure I understand why Registry is an abstract class.
+ * msp: I's specialized by EclipseLayoutMetaDataServiceRegistry. It should also be specialized in the
+ *      layout server, which should be free of UI-related things. This whole class will change a lot
+ *      if we decide to use a DSL to describe meta data.
  * 
  * @kieler.design 2011-03-14 reviewed by cmot, cds
  * @kieler.rating yellow 2012-10-09 review KI-25 by chsch, bdu

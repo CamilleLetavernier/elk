@@ -31,6 +31,8 @@ import com.google.common.collect.Iterators;
  * cds: Add more info. Are clients supposed to use this or is it automatically invoked by Elk? Also,
  *      document how this fits into the picture between ILayoutConfigurationStore, Setup, and
  *      LayoutConfigurator.
+ * msp: I used this class to dump in all the configuration-related code that had become homeless.
+ *      The API is likely to be changed, so I'd wait a bit before committing to it.  
  */
 public class LayoutConfigurationManager {
     

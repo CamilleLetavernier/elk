@@ -39,6 +39,12 @@ public interface IProperty<T> {
     @Deprecated
     // cds: Why are these deprecated? Don't we still want the ability to check whether layout option
     //      values are within a valid range?
+    // msp: The lower/upper bounds were introduced for the evolutionary layout, for which I completely
+    //      dropped the support. Maybe we could reintroduce bounds when we design a DSL for layout options,
+    //      but an important question then is what to do with those bounds. If a value exceeds a given
+    //      bound, should we throw an exception or change the value to match the bound? I think an optimal
+    //      solution would be an early feedback such as error markers directly in the corresponding row
+    //      of the Layout view.
     Comparable<? super T> getLowerBound();
     
     /**
